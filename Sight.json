@@ -1,0 +1,13 @@
+{
+    "schema_version": 2,
+    "macros": [
+        {
+            "attributes": {
+                "action": "!token-mod {{ --set ?{Vision|\n   Torch, light_radius#40 light_dimradius#20 light_losangle#360 light_otherplayers#yes statusmarkers#chemical-bolt|\n   Candle, light_radius#6 light_dimradius#=0 light_losangle#360 light_otherplayers#yes|\n   Darkvision, light_radius#60 light_dimradius#=-5  light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   Superior Darkvision, light_radius#120 light_dimradius#=-5 light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   No light source, light_radius#1 light_dimradius#=0 light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   Blinded, light_losangle#0}\n}}",
+                "istokenaction": false,
+                "name": "Sight",
+                "visibleto": ""
+            }
+        }
+    ]
+}

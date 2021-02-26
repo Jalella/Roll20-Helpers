@@ -1,0 +1,165 @@
+{
+    "schema_version": 2,
+    "macros": [
+        {
+            "attributes": {
+                "action": "!token-mod --set scale|?{size}",
+                "istokenaction": false,
+                "name": "Size",
+                "visibleto": ""
+            },
+            "macrobar": {
+                "color": null,
+                "name": null
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod {{ --set statusmarkers|?{Status|\n\tBlessed,!angel-outfit|\n        Blinded,!Blinded|\n\tBurning,!Burning|\n\tCharmed,!Charmed|\n\tConcentrating,!stopwatch|\n        Diseased,!Diseased|\n\tDodging,!white-tower|\n\tExhaustion,radioactive:+1|\n\tGrappled,!grab|\n\tIncapacitated,!sleepy|\n\tInvisible,!ninja-mask|\n\tFly,!fluffy-wing|\n\tFrightened,!screaming|\n\tHasted,!tread|\n\tParalyzed,!pummeled|\n\tPetrifyed,!Petrified|\n\tPoisoned,!drink-me|\n\tProne,!back-pain|\n\tProtected,!white-tower|\n\tRaged,!fist|\n\tRestrained,!padlock|\n\tShield,!bolt-shield|\n\tSleeping,!sleepy|\n\tSlowed,!snail|\n\tStunned,!interdiction|\n\tUnconcious,!sleepy}\n}}",
+                "istokenaction": false,
+                "name": "Status",
+                "visibleto": ""
+            },
+            "macrobar": {
+                "color": "#4a86e8",
+                "name": null
+            }
+        },
+        {
+            "attributes": {
+                "action": "/w GM Init @{selected|token_name} [[1d20+@{selected|initiative_bonus}&{tracker}]]",
+                "istokenaction": true,
+                "name": "Initiative",
+                "visibleto": "all"
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set imgsrc|+@{target|token_id} --ids @{selected|token_id}",
+                "istokenaction": false,
+                "name": "AddMulti",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "&{template:npcaction} {{rname= Potion of Healing}} {{name=}} {{description=Heals [[2d4+2]] hp}}",
+                "istokenaction": false,
+                "name": "Potion-of-Healing",
+                "visibleto": "all"
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|!frozen-orb",
+                "istokenaction": true,
+                "name": "Reaction",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|!flying-flag",
+                "istokenaction": true,
+                "name": "Ready",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod {{\n  --set\n    statusmarkers|!angel-outfit\n  --ids\n    @{target|First Blessed|token_id}\n    @{target|Second Blessed|token_id}\n    @{target|Third Blessed|token_id}\n}}\n!token-mod {{\n  --set\n    statusmarkers|stopwatch\n  --ids\n    @{selected|token_id}\n}}",
+                "istokenaction": false,
+                "name": "Bless",
+                "visibleto": "all"
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --off showname",
+                "istokenaction": false,
+                "name": "Name-off",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "?{Rest?|Short Rest,!short-rest|Long Rest,!long-rest}",
+                "istokenaction": false,
+                "name": "Rest",
+                "visibleto": "all"
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set name|\"(^?{height} ft.)\" --on showname --on showplayers_name --set statusmarkers|!fluffy-wing",
+                "istokenaction": false,
+                "name": "Fly",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set name|\"@{selected|character_name}\" --off showname --off showplayers_name --set statusmarkers|!fluffy-wing",
+                "istokenaction": false,
+                "name": "Fly-Not",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod {{ --set ?{Vision|\n   Torch, light_radius#40 light_dimradius#20 light_losangle#360 light_otherplayers#yes statusmarkers#chemical-bolt|\n   Candle, light_radius#6 light_dimradius#=0 light_losangle#360 light_otherplayers#yes|\n   Darkvision, light_radius#60 light_dimradius#=-5  light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   Superior Darkvision, light_radius#120 light_dimradius#=-5 light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   No light source, light_radius#1 light_dimradius#=0 light_losangle#360 light_otherplayers#no statusmarkers#-chemical-bolt|\n   Blinded, light_losangle#0}\n}}",
+                "istokenaction": false,
+                "name": "Sight",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set bar1|?{hps} ",
+                "istokenaction": false,
+                "name": "HP-Set",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "/desc [img](?{URL}.png)",
+                "istokenaction": false,
+                "name": "Img",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set bar1_reset|",
+                "istokenaction": false,
+                "name": "HP-Reset",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|!back-pain|!skull",
+                "istokenaction": false,
+                "name": "Dying",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|=dead bar1_value|0",
+                "istokenaction": false,
+                "name": "Dead",
+                "visibleto": ""
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|=red|-red",
+                "istokenaction": false,
+                "name": "Status-remove",
+                "visibleto": ""
+            }
+        }
+    ]
+}
