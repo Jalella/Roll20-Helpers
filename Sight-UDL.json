@@ -1,0 +1,17 @@
+{
+    "schema_version": 2,
+    "macros": [
+        {
+            "attributes": {
+                "action": "!token-mod {{\n--set ?{Vision\n   |Torch, --on emits_bright emits_low_light\n               --off has_directional_bright_light has_directional_dim_light\n               --set bright_light_distance#20 low_light_distance#20\n   |Snuff, --off emits_bright_light emits_low_light\n   |Darkvision, night_vision#yes\n               night_vision_distance#60\n               night_vision_tint##6aa84f\n   |See Normal, has_limit_field_of_vision#yes \n               limit_field_of_vision_total#360\n   |Blinded, --on has_limit_field_of_vision has_limit_field_of_night_vision\n                  --set limit_field_of_vision_total#0 limit_field_of_night_vision_total#0\n   |See Darkvision, has_limit_field_of_night_vision#yes\n               limit_field_of_night_vision_total#360\n               limit_field_of_vision_total#360}\n}}",
+                "istokenaction": false,
+                "name": "Sight-UDL",
+                "visibleto": ""
+            },
+            "macrobar": {
+                "color": "#ff9900",
+                "name": null
+            }
+        }
+    ]
+}
